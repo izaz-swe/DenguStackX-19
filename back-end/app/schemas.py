@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Literal, List
+from typing import Literal, List, Union
 
 class PredictRequest(BaseModel):
     Gender: Literal['Male', 'Female']
@@ -33,3 +33,7 @@ class BatchPredictResponse(BaseModel):
 
 class CSVPredictionResponse(BaseModel):
     predictions: List[float]
+
+
+class ArrayInput(BaseModel):
+    data: List[Union[str, int, float]]

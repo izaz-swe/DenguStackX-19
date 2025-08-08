@@ -47,147 +47,113 @@ const TestModel = () => {
     if (!data.age || data.age < 0 || data.age > 120) {
       errors.push('Valid age (0-120) is required');
     }
-    if (!data.hemoglobin_g_dl || data.hemoglobin_g_dl < 0 || data.hemoglobin_g_dl > 25) {
+    if (!data.hemoglobin_g_dl) {
       errors.push('Valid hemoglobin level (0-25 g/dl) is required');
     }
-    if (!data.neutrophils_pct || data.neutrophils_pct < 0 || data.neutrophils_pct > 100) {
+    if (!data.neutrophils_pct ) {
       errors.push('Valid neutrophils percentage (0-100) is required');
     }
-    if (!data.lymphocytes_pct || data.lymphocytes_pct < 0 || data.lymphocytes_pct > 100) {
+    if (!data.lymphocytes_pct ) {
       errors.push('Valid lymphocytes percentage (0-100) is required');
     }
-    if (!data.monocytes_pct || data.monocytes_pct < 0 || data.monocytes_pct > 100) {
+    if (!data.monocytes_pct ) {
       errors.push('Valid monocytes percentage (0-100) is required');
     }
-    if (!data.eosinophils_pct || data.eosinophils_pct < 0 || data.eosinophils_pct > 100) {
+    if (!data.eosinophils_pct) {
       errors.push('Valid eosinophils percentage (0-100) is required');
     }
-    if (!data.rbc || data.rbc < 0) {
+    if (!data.rbc ) {
       errors.push('Valid RBC count is required');
     }
-    if (!data.hct_pct || data.hct_pct < 0 || data.hct_pct > 100) {
+    if (!data.hct_pct ) {
       errors.push('Valid HCT percentage (0-100) is required');
     }
-    if (!data.mcv_fl || data.mcv_fl < 0) {
+    if (!data.mcv_fl ) {
       errors.push('Valid MCV (fl) is required');
     }
-    if (!data.mch_pg || data.mch_pg < 0) {
+    if (!data.mch_pg ) {
       errors.push('Valid MCH (pg) is required');
     }
-    if (!data.mchc_g_dl || data.mchc_g_dl < 0) {
+    if (!data.mchc_g_dl ) {
       errors.push('Valid MCHC (g/dl) is required');
     }
-    if (!data.rdw_cv_pct || data.rdw_cv_pct < 0) {
+    if (!data.rdw_cv_pct ) {
       errors.push('Valid RDW CV percentage is required');
     }
     if (!data.total_platelet_count_cumm || data.total_platelet_count_cumm < 0) {
       errors.push('Valid platelet count is required');
     }
-    if (!data.mpv_fl || data.mpv_fl < 0) {
+    if (!data.mpv_fl ) {
       errors.push('Valid MPV (fl) is required');
     }
-    if (!data.pdw_pct || data.pdw_pct < 0) {
+    if (!data.pdw_pct ) {
       errors.push('Valid PDW percentage is required');
     }
-    if (!data.pct_pct || data.pct_pct < 0) {
+    if (!data.pct_pct ) {
       errors.push('Valid PCT percentage is required');
     }
-    if (!data.total_wbc_count_cumm || data.total_wbc_count_cumm < 0) {
+    if (!data.total_wbc_count_cumm ) {
       errors.push('Valid WBC count is required');
     }
     
     return errors;
   };
 
-  const predictDengue = (data) => {
-    const riskFactors = [];
-    let riskScore = 0;
-    
-    // Risk assessment based on dengue indicators
-    if (data.total_platelet_count_cumm < 150000) {
-      riskFactors.push('Low platelet count');
-      riskScore += 30;
-    }
-    
-    if (data.hemoglobin_g_dl < 12) {
-      riskFactors.push('Low hemoglobin');
-      riskScore += 20;
-    }
-    
-    if (data.neutrophils_pct > 70) {
-      riskFactors.push('High neutrophils');
-      riskScore += 15;
-    }
-    
-    if (data.lymphocytes_pct < 20) {
-      riskFactors.push('Low lymphocytes');
-      riskScore += 25;
-    }
-    
-    if (data.total_wbc_count_cumm < 4000 || data.total_wbc_count_cumm > 11000) {
-      riskFactors.push('Abnormal WBC count');
-      riskScore += 20;
-    }
-    
-    if (data.hct_pct < 36) {
-      riskFactors.push('Low hematocrit');
-      riskScore += 15;
-    }
-    
-    // Add some randomness for demo purposes
-    riskScore += Math.random() * 20;
-    
-    const prediction = riskScore > 50 ? 'Positive' : 'Negative';
-    const confidence = Math.min(95, 60 + Math.random() * 35);
-    
-    return {
-      prediction,
-      confidence: confidence.toFixed(1),
-      riskScore: Math.min(100, riskScore).toFixed(1),
-      riskFactors
-    };
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Convert form data to appropriate types
     const processedData = {
-      gender: formData.gender,
-      age: parseInt(formData.age),
-      hemoglobin_g_dl: parseFloat(formData.hemoglobin_g_dl),
-      neutrophils_pct: parseInt(formData.neutrophils_pct),
-      lymphocytes_pct: parseInt(formData.lymphocytes_pct),
-      monocytes_pct: parseInt(formData.monocytes_pct),
-      eosinophils_pct: parseInt(formData.eosinophils_pct),
-      rbc: parseInt(formData.rbc),
-      hct_pct: parseFloat(formData.hct_pct),
-      mcv_fl: parseFloat(formData.mcv_fl),
-      mch_pg: parseFloat(formData.mch_pg),
-      mchc_g_dl: parseFloat(formData.mchc_g_dl),
-      rdw_cv_pct: parseFloat(formData.rdw_cv_pct),
-      total_platelet_count_cumm: parseInt(formData.total_platelet_count_cumm),
-      mpv_fl: parseFloat(formData.mpv_fl),
-      pdw_pct: parseFloat(formData.pdw_pct),
-      pct_pct: parseFloat(formData.pct_pct),
-      total_wbc_count_cumm: parseInt(formData.total_wbc_count_cumm)
+      Gender: formData.gender,
+      Age: parseInt(formData.age),
+      Hemoglobin_g_dl: parseFloat(formData.hemoglobin_g_dl),
+      Neutrophils_pct: parseInt(formData.neutrophils_pct),
+      Lymphocytes_pct: parseInt(formData.lymphocytes_pct),
+      Monocytes_pct: parseInt(formData.monocytes_pct),
+      Eosinophils_pct: parseInt(formData.eosinophils_pct),
+      RBC: parseInt(formData.rbc),
+      HCT_pct: parseFloat(formData.hct_pct),
+      MCV_fl: parseFloat(formData.mcv_fl),
+      MCH_pg: parseFloat(formData.mch_pg),
+      MCHC_g_dl: parseFloat(formData.mchc_g_dl),
+      RDW_CV_pct: parseFloat(formData.rdw_cv_pct),
+      Total_Platelet_Count_cumm: parseInt(formData.total_platelet_count_cumm),
+      MPV_fl: parseFloat(formData.mpv_fl),
+      PDW_pct: parseFloat(formData.pdw_pct),
+      PCT_pct: parseFloat(formData.pct_pct),
+      Total_WBC_count_cumm: parseInt(formData.total_wbc_count_cumm)
     };
     
     // Validate form
-    const errors = validateForm(processedData);
-    if (errors.length > 0) {
-      alert('Please fix the following errors:\n' + errors.join('\n'));
-      return;
-    }
+    // const errors = validateForm(processedData);
+    // if (errors.length > 0) {
+    //   alert('Please fix the following errors:\n' + errors.join('\n'));
+    //   return;
+    // }
     
     setIsLoading(true);
     
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Get prediction
-    const predictionResult = predictDengue(processedData);
-    setResult(predictionResult);
+    try {
+    const response = await fetch("http://127.0.0.1:8000/predict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(processedData)
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.detail || "Prediction failed");
+    }
+
+    const data = await response.json();
+    setResult(data);  // e.g. { prediction: 1, probability: 0.92 }
+
+  } catch (error) {
+    console.error("❌ Prediction Error:", error);
+  }
     setIsLoading(false);
   };
 
@@ -240,9 +206,6 @@ const TestModel = () => {
                     name="hemoglobin_g_dl"
                     value={formData.hemoglobin_g_dl}
                     onChange={handleInputChange}
-                    step="0.1"
-                    min="0"
-                    max="25"
                     required
                   />
                 </div>
@@ -255,8 +218,6 @@ const TestModel = () => {
                     name="neutrophils_pct"
                     value={formData.neutrophils_pct}
                     onChange={handleInputChange}
-                    min="0"
-                    max="100"
                     required
                   />
                 </div>
@@ -269,8 +230,6 @@ const TestModel = () => {
                     name="lymphocytes_pct"
                     value={formData.lymphocytes_pct}
                     onChange={handleInputChange}
-                    min="0"
-                    max="100"
                     required
                   />
                 </div>
@@ -283,8 +242,6 @@ const TestModel = () => {
                     name="monocytes_pct"
                     value={formData.monocytes_pct}
                     onChange={handleInputChange}
-                    min="0"
-                    max="100"
                     required
                   />
                 </div>
@@ -297,8 +254,6 @@ const TestModel = () => {
                     name="eosinophils_pct"
                     value={formData.eosinophils_pct}
                     onChange={handleInputChange}
-                    min="0"
-                    max="100"
                     required
                   />
                 </div>
@@ -311,7 +266,6 @@ const TestModel = () => {
                     name="rbc"
                     value={formData.rbc}
                     onChange={handleInputChange}
-                    min="0"
                     required
                   />
                 </div>
@@ -324,9 +278,6 @@ const TestModel = () => {
                     name="hct_pct"
                     value={formData.hct_pct}
                     onChange={handleInputChange}
-                    step="0.1"
-                    min="0"
-                    max="100"
                     required
                   />
                 </div>
@@ -339,8 +290,6 @@ const TestModel = () => {
                     name="mcv_fl"
                     value={formData.mcv_fl}
                     onChange={handleInputChange}
-                    step="0.1"
-                    min="0"
                     required
                   />
                 </div>
@@ -353,8 +302,6 @@ const TestModel = () => {
                     name="mch_pg"
                     value={formData.mch_pg}
                     onChange={handleInputChange}
-                    step="0.1"
-                    min="0"
                     required
                   />
                 </div>
@@ -367,8 +314,6 @@ const TestModel = () => {
                     name="mchc_g_dl"
                     value={formData.mchc_g_dl}
                     onChange={handleInputChange}
-                    step="0.1"
-                    min="0"
                     required
                   />
                 </div>
@@ -381,8 +326,6 @@ const TestModel = () => {
                     name="rdw_cv_pct"
                     value={formData.rdw_cv_pct}
                     onChange={handleInputChange}
-                    step="0.1"
-                    min="0"
                     required
                   />
                 </div>
@@ -395,7 +338,6 @@ const TestModel = () => {
                     name="total_platelet_count_cumm"
                     value={formData.total_platelet_count_cumm}
                     onChange={handleInputChange}
-                    min="0"
                     required
                   />
                 </div>
@@ -408,8 +350,6 @@ const TestModel = () => {
                     name="mpv_fl"
                     value={formData.mpv_fl}
                     onChange={handleInputChange}
-                    step="0.1"
-                    min="0"
                     required
                   />
                 </div>
@@ -422,8 +362,6 @@ const TestModel = () => {
                     name="pdw_pct"
                     value={formData.pdw_pct}
                     onChange={handleInputChange}
-                    step="0.1"
-                    min="0"
                     required
                   />
                 </div>
@@ -436,8 +374,6 @@ const TestModel = () => {
                     name="pct_pct"
                     value={formData.pct_pct}
                     onChange={handleInputChange}
-                    step="0.1"
-                    min="0"
                     required
                   />
                 </div>
@@ -450,7 +386,6 @@ const TestModel = () => {
                     name="total_wbc_count_cumm"
                     value={formData.total_wbc_count_cumm}
                     onChange={handleInputChange}
-                    min="0"
                     required
                   />
                 </div>
@@ -482,37 +417,24 @@ const TestModel = () => {
                 <div 
                   className="result-icon"
                   style={{
-                    background: result.prediction === 'Positive' 
+                    background: result.prediction === 1 
                       ? 'linear-gradient(135deg, #ef4444, #dc2626)' 
                       : 'linear-gradient(135deg, #10b981, #059669)'
                   }}
                 >
                   <FontAwesomeIcon 
-                    icon={result.prediction === 'Positive' ? faExclamationTriangle : faCheckCircle} 
+                    icon={result.prediction === 1 ? faExclamationTriangle : faCheckCircle} 
                   />
                 </div>
                 <h3 style={{
-                  color: result.prediction === 'Positive' ? '#ef4444' : '#10b981'
+                  color: result.prediction === 1 ? '#ef4444' : '#10b981'
                 }}>
-                  {result.prediction === 'Positive' ? 'High Dengue Risk Detected' : 'Low Dengue Risk'}
+                  {result.prediction === 1 ? 'Positive' : 'Negative'}
                 </h3>
                 <div>
                   <div style={{ marginBottom: '1rem' }}>
-                    <strong>Prediction:</strong> {result.prediction}<br/>
-                    <strong>Confidence:</strong> {result.confidence}%<br/>
-                    <strong>Risk Score:</strong> {result.riskScore}/100
+                    <strong>Prediction:</strong> {result.probability}<br/>
                   </div>
-                  
-                  {result.riskFactors.length > 0 && (
-                    <div style={{ textAlign: 'left', marginTop: '1rem' }}>
-                      <strong>Risk Factors Identified:</strong>
-                      <ul style={{ margin: '0.5rem 0', paddingLeft: '1.5rem' }}>
-                        {result.riskFactors.map((factor, index) => (
-                          <li key={index}>{factor}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
                   
                   <div style={{ 
                     marginTop: '1rem', 
