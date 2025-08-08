@@ -9,8 +9,7 @@ def preprocess_input(data: dict) -> np.ndarray:
     if 'Gender' in df.columns:
         df['Gender'] = label_encoder.fit_transform(df['Gender'])
 
-    # Scale
-    return scaler.fit_transform(df)
+    return scaler.transform(df)
 
 def preprocess_df_input(df: pd.DataFrame) -> np.ndarray:
     """

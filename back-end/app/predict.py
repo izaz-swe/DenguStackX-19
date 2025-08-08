@@ -2,6 +2,7 @@ from .model import stack_model
 from .preprocess import preprocess_input, preprocess_df_input
 import pandas as pd
 
+
 def predict_dengue(data: dict):
     X = preprocess_input(data)
     prediction = stack_model.predict(X)[0]

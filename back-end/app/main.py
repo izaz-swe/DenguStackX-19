@@ -1,12 +1,21 @@
-from fastapi import FastAPI
-from .schemas import CSVPredictionResponse, PredictRequest, PredictResponse, BatchPredictRequest, BatchPredictResponse
+from fastapi import FastAPI, HTTPException, Query
+from .schemas import CSVPredictionResponse, PredictRequest, PredictResponse, BatchPredictRequest, BatchPredictResponse, ArrayInput
 from .predict import predict_dengue, predict_df_dengue
 import pandas as pd
 from .model import stack_model
-
+from .array_to_json import convert_list_to_json, csv_to_json_objects
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI(title="DengueStackX-19 Predictor")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # ✅ React dev server origin
+    allow_credentials=True,
+    allow_methods=["*"],                      # or specify: ["POST", "GET"]
+    allow_headers=["*"],
+)
+
 
 @app.get("/")
 def heath():
@@ -33,3 +42,28 @@ async def predict_batch():
     df = pd.read_csv('./data/X_test.csv')
     results = stack_model.predict(df)
     return {"predictions": results.tolist()}
+
+
+@app.post("/json")
+async def convert_array(data: ArrayInput):
+    try:
+        result = convert_list_to_json(data.data)
+        return result
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    
+@app.post("/csv")
+async def convert_csv(start: int = Query(0), end: int = Query(10)):
+    try:
+        # Load all JSON objects from CSV
+        result = csv_to_json_objects()  # pass your actual path
+
+        # Validate range
+        if start < 0 or end > len(result) or start >= end:
+            raise ValueError(f"Invalid range: start={start}, end={end}")
+
+        return result[start:end]
+
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))

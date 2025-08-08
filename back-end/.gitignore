@@ -1,4 +1,4 @@
-dengu_env/
+dengue_env/
 
 # Ignore Python bytecode cache directories
 __pycache__/
