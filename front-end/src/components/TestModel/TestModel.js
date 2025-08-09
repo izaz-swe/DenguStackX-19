@@ -162,7 +162,7 @@ const TestModel = () => {
       <div className="container">
         <div className="section-header">
           <h2>Test Our Model</h2>
-          <p>Enter complete blood count (CBC) parameters to get dengue prediction using our ML model</p>
+          <p>Enter Compelete Blood Count(CBC) parameters to get Dengue prediction using our DengueStackX-19 Model</p>
         </div>
         
         <div className="test-container">
@@ -423,7 +423,7 @@ const TestModel = () => {
                   }}
                 >
                   <FontAwesomeIcon 
-                    icon={result.prediction === 1 ? faExclamationTriangle : faCheckCircle} 
+                    icon={result.prediction === 1 ? faExclamationTriangle : faCheckCircle} color="#fff" size="2x"
                   />
                 </div>
                 <h3 style={{
@@ -451,7 +451,7 @@ const TestModel = () => {
             ) : (
               <>
                 <div className="result-icon">
-                  <FontAwesomeIcon icon={faChartBar} />
+                  <FontAwesomeIcon icon={faChartBar} color="#fff" size="2x" />
                 </div>
                 <h3>Prediction Result</h3>
                 <p>Enter patient data to see the dengue prediction</p>

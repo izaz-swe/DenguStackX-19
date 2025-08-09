@@ -84,19 +84,19 @@ const Hero = () => {
         <div className="hero-visual">
           <div className="visual-container">
             <div className="floating-card card-1">
-              <FontAwesomeIcon icon={faBrain} />
+              <FontAwesomeIcon icon={faBrain} color="#fff" size="2x" />
               <span>Neural Networks</span>
             </div>
             <div className="floating-card card-2">
-              <FontAwesomeIcon icon={faBalanceScale} />
+              <FontAwesomeIcon icon={faBalanceScale} color="#fff" size="2x" />
               <span>SMOTE</span>
             </div>
             <div className="floating-card card-3">
-              <FontAwesomeIcon icon={faChartLine} />
+              <FontAwesomeIcon icon={faChartLine} color="#fff" size="2x" />
               <span>96.5% Accuracy</span>
             </div>
             <div className="floating-card card-4">
-              <FontAwesomeIcon icon={faVirus} />
+              <FontAwesomeIcon icon={faVirus} color="#fff" size="2x" />
               <span>Dengue Detection</span>
             </div>
           </div>
