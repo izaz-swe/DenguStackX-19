@@ -433,7 +433,28 @@ const TestModel = () => {
                 </h3>
                 <div>
                   <div style={{ marginBottom: '1rem' }}>
-                    <strong>Prediction:</strong> {result.probability}<br/>
+                    {/* <strong>Prediction:</strong> {result.probability}<br/> */}
+                    <strong>Dengue Probability:</strong> {(result.probability).toFixed(4)}<br/>
+                  </div>
+
+                  {/* Add engaging phrase based on probability */}
+                  <div style={{ 
+                    marginBottom: '1rem', 
+                    padding: '1rem', 
+                    background: result.probability < 0.3 ? '#d1fae5' : result.probability < 0.7 ? '#fef3c7' : '#fecaca', 
+                    borderRadius: '8px', 
+                    fontSize: '1rem',
+                    fontWeight: '500',
+                    color: result.probability < 0.3 ? '#065f46' : result.probability < 0.7 ? '#92400e' : '#991b1b'
+                  }}>
+                    Our model indicates a <strong>
+                      {result.probability < 0.3 ? 'Low' : 
+                       result.probability < 0.7 ? 'Moderate' : 'High'}
+                    </strong> probability. {
+                      result.probability < 0.3 ? 'Stay Alert & Monitor Symptoms.' :
+                      result.probability < 0.7 ? 'Consult a doctor for confirmation.' :
+                      'Consult a doctor immediately.'
+                    }
                   </div>
                   
                   <div style={{ 
@@ -443,8 +464,7 @@ const TestModel = () => {
                     borderRadius: '8px', 
                     fontSize: '0.875rem' 
                   }}>
-                    <strong>Disclaimer:</strong> This is a research model for educational purposes. 
-                    Always consult healthcare professionals for medical diagnosis.
+                    <strong>Disclaimer:</strong> This is a research model prototype.
                   </div>
                 </div>
               </>
