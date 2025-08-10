@@ -43,7 +43,7 @@ const Header = () => {
       <div className="nav-container">
         <div className="nav-logo">
           <FontAwesomeIcon icon={faMicroscope} />
-          <span>Dengue Research</span>
+          <span> DengueStackX-19</span>
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li>
