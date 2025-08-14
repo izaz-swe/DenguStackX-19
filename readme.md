@@ -9,21 +9,21 @@
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Dataset Information](#dataset-information)
-- [Model Performance](#model-performance)
-- [System Architecture](#system-architecture)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Web Interface](#web-interface)
-- [Model Development](#model-development)
-- [Evaluation Metrics](#evaluation-metrics)
-- [Contributing](#contributing)
-- [Citation](#citation)
-- [Authors](#authors)
-- [License](#license)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Dataset Information](#-dataset-information)
+- [Model Performance](#-model-performance)
+- [System Architecture](#️-system-architecture)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [API Documentation](#-api-documentation)
+- [Web Interface](#️-web-interface)
+- [Model Development](#-model-development)
+- [Evaluation Metrics](#-evaluation-metrics)
+- [Contributing](#-contributing)
+- [Citation](#-citation)
+- [Authors](#-authors)
+- [License](#-license)
 
 ## 🔬 Overview
 
