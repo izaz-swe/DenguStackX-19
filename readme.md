@@ -372,7 +372,6 @@ response = requests.post("http://localhost:8000/predict-batch", json=batch_data)
 ### Development Workflow
 
 1. **Data Preprocessing**
-   - Missing value imputation
    - Feature scaling and normalization
    - Categorical encoding
 
