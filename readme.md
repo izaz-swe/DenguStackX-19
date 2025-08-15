@@ -9,25 +9,39 @@
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Dataset Information](#dataset-information)
-- [Model Performance](#model-performance)
-- [System Architecture](#system-architecture)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Web Interface](#web-interface)
-- [Model Development](#model-development)
-- [Evaluation Metrics](#evaluation-metrics)
-- [Contributing](#contributing)
-- [Citation](#citation)
-- [Authors](#authors)
-- [License](#license)
+- [Overview](#-overview)
+- [Methodology](#-methodology)
+- [Model Architecture](#-model-architecture)
+- [Features](#-features)
+- [Dataset Information](#-dataset-information)
+- [Model Performance](#-model-performance)
+- [System Architecture](#️-system-architecture)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [API Documentation](#-api-documentation)
+- [Web Interface](#️-web-interface)
+- [Model Development](#-model-development)
+- [Evaluation Metrics](#-evaluation-metrics)
+- [Contributing](#-contributing)
+- [Citation](#-citation)
+- [Authors](#-authors)
+- [License](#-license)
 
 ## 🔬 Overview
 
 DengueStackX-19 is a comprehensive machine learning framework designed for early dengue fever detection using clinical hematological parameters. This research implements and compares multiple ML algorithms with various data balancing techniques to achieve optimal prediction accuracy.
+
+## 🧬 Methodology
+
+![Research Diagram](images/Research%20Diagram.jpg)
+
+Our research methodology follows a systematic approach combining clinical data analysis with advanced machine learning techniques. The framework integrates multiple data balancing strategies with ensemble learning to achieve optimal dengue prediction accuracy. This comprehensive pipeline ensures robust model validation through cross-validation and clinical relevance assessment.
+
+## ⚙️ Model Architecture
+![DengueStackX-19 Architecture](images/DengueStackX-19%20Architecture.jpg)
+
+The DengueStackX-19 framework implements a comprehensive three-tier architecture integrating data preprocessing, machine learning model training, and web-based deployment. This scalable design ensures seamless integration between the FastAPI backend, React frontend, and trained ML models for real-time clinical decision support.
+
 
 ### Key Research Contributions
 
@@ -90,15 +104,16 @@ The study utilizes a comprehensive dataset of clinical hematological parameters:
 
 | Balancing Technique | Best Model | Accuracy | F1-Score |
 |-------------------|------------|----------|----------|
-| **SMOTE** | Neural Network | **97.8%** | **96.9%** |
-| SMOTETomek | Neural Network | 97.6% | 96.7% |
-| SMOTEENN | Neural Network | 97.2% | 96.1% |
-| ADASYN | Neural Network | 97.5% | 96.4% |
-| Without Balancing | Neural Network | 96.5% | 95.2% |
+| SMOTE | DengueStackX-19 | 83.45% | 83.76% |
+| **SMOTEENN** | **DengueStackX-19** | **96.38%** | **94.20%** |
+| SMOTETomek | DengueStackX-19 | 88.67% | 89.30% |
+| ADASYN | DengueStackX-19 | 86.51% | 86.98% |
+| Tomek Links  | DengueStackX-19 | 77.31% | 84.69% |
+| Without Balancing | DengueStackX-19 | 77.38% | 85.35% |
 
 ### Performance Highlights
-- 🎯 **Highest Accuracy**: 97.8% (Neural Network + SMOTE)
-- 📈 **Best F1-Score**: 96.9% (Neural Network + SMOTE)
+- 🎯 **Highest Accuracy**: 96.38% (SMOTEENN)
+- 📈 **Best F1-Score**: 94.20% (SMOTEENN)
 - ⚡ **Fastest Inference**: <100ms prediction time
 - 🔄 **Cross-validation**: 5-fold CV with consistent results
 
