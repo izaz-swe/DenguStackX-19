@@ -102,6 +102,7 @@ The study utilizes a comprehensive dataset of clinical hematological parameters:
 |----------|------------|
 | **Demographics** | Gender, Age |
 | **Red Blood Cells** | Hemoglobin (g/dL), RBC count, HCT (%), MCV (fL), MCH (pg), MCHC (g/dL), RDW-CV (%) |
+| **Blood Composition** | Hematocrit (HCT %)|
 | **White Blood Cells** | Total WBC count, Neutrophils (%), Lymphocytes (%), Monocytes (%), Eosinophils (%) |
 | **Platelets** | Total Platelet Count, MPV (fL), PDW (%), PCT (%) |
 
