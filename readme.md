@@ -352,9 +352,10 @@ response = requests.post("http://localhost:8000/predict-batch", json=batch_data)
 
 ```json
 {
-  "prediction": "0|1",  // 0: Negative, 1: Positive
-  "probability": "0.5-1.0"  // Probability of positive case
+  "prediction": 0 | 1,        // 0: Negative, 1: Positive
+  "probability": 0.5 - 1.0    // Probability of positive case
 }
+
 ```
 
 ## 🖥️ Web Interface
