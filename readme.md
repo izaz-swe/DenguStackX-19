@@ -157,7 +157,6 @@ DengueStackX-19/
 **Backend:**
 - FastAPI (high-performance API)
 - Scikit-learn (ML framework)
-- LightGBM (gradient boosting)
 - Pandas (data processing)
 - NumPy (numerical computing)
 
@@ -376,7 +375,7 @@ response = requests.post("http://localhost:8000/predict-batch", json=batch_data)
    - Categorical encoding
 
 2. **Data Balancing**
-   - Implementation of 6 balancing techniques
+   - Implementation of 5 balancing techniques
    - Comparative analysis of class distribution
 
 3. **Model Training**
