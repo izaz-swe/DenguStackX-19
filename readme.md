@@ -476,9 +476,6 @@ If you use this work in your research, please cite:
 | **A K M Fazlul Kobir Siam** | Student | Dept. of Computer Science and Engineering<br>Daffodil International University | fazlul15-3432@diu.edu.bd | [0000-0002-4991-6816](https://orcid.org/0000-0002-4991-6816) |
 | **Md Mahfuzur Rahman Shanto** | Student | Dept. of Software Engineering<br>Daffodil International University | shanto35-917@diu.edu.bd | [0009-0007-6678-0635](https://orcid.org/0009-0007-6678-0635) |
 
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
