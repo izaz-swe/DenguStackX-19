@@ -15,7 +15,7 @@
 - [Features](#-features)
 - [Dataset Information](#-dataset-information)
 - [Model Performance](#-model-performance)
-- [System Architecture](#️-system-architecture)
+- [System Structure](#️-system-structure)
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [API Documentation](#-api-documentation)
@@ -101,7 +101,7 @@ The study utilizes a comprehensive dataset of clinical hematological parameters:
 | Category | Parameters |
 |----------|------------|
 | **Demographics** | Gender, Age |
-| **Red Blood Cells** | Hemoglobin (g/dL), RBC count, HCT (%), MCV (fL), MCH (pg), MCHC (g/dL), RDW-CV (%) |
+| **Red Blood Cells** | Hemoglobin (g/dL), RBC count, MCV (fL), MCH (pg), MCHC (g/dL), RDW-CV (%) |
 | **Blood Composition** | Hematocrit (HCT %)|
 | **White Blood Cells** | Total WBC count, Neutrophils (%), Lymphocytes (%), Monocytes (%), Eosinophils (%) |
 | **Platelets** | Total Platelet Count, MPV (fL), PDW (%), PCT (%) |
@@ -125,33 +125,42 @@ The study utilizes a comprehensive dataset of clinical hematological parameters:
 - ⚡ **Fastest Inference**: <100ms prediction time
 - 🔄 **Cross-validation**: 10-fold CV with consistent results
 
-## 🏗️ System Architecture
+## 🏗️ System Structure
 
 ```
 DengueStackX-19/
-├── 🎨 front-end/          # React.js Web Interface
+├── front-end/                     # React.js Web Interface
+│   ├── public/                    # Static assets
 │   ├── src/
-│   │   ├── components/    # UI Components
-│   │   │   ├── Hero/      # Landing page
-│   │   │   ├── TestModel/ # Prediction interface
-│   │   │   ├── Models/    # Performance comparison
-│   │   │   ├── Research/  # Research overview
-│   │   │   └── Team/      # Author information
-│   │   └── styles/        # CSS styling
-│   └── public/
-├── 🚀 back-end/           # FastAPI Server
+│   │   ├── components/            # UI Components
+│   │   │   ├── Hero/              # Landing page
+│   │   │   ├── TestModel/         # Prediction interface
+│   │   │   ├── Models/            # Performance comparison
+│   │   │   ├── Research/          # Research overview
+│   │   │   └── Team/              # Author information
+│   │   ├── styles/                # CSS styling
+│   │   └── App.js                 # Main React application
+│   ├── package.json               # Node.js dependencies
+│   └── package-lock.json
+├── back-end/                      # FastAPI Server
 │   ├── app/
-│   │   ├── main.py        # FastAPI application
-│   │   ├── predict.py     # Prediction logic
-│   │   ├── model.py       # Model loading
-│   │   ├── schemas.py     # Data validation
-│   │   └── preprocess.py  # Data preprocessing
-│   ├── models/            # Trained ML models
+│   │   ├── main.py                # FastAPI application
+│   │   ├── predict.py             # Prediction logic
+│   │   ├── model.py               # Model loading
+│   │   ├── schemas.py             # Data validation
+│   │   └── preprocess.py          # Data preprocessing
+│   ├── models/                    # Trained ML models
 │   │   ├── DengueStackX-19.pkl
 │   │   ├── scaler.pkl
 │   │   └── label_encoder.pkl
-│   └── data/              # Dataset files
-└── 📋 requirements.txt    # Python dependencies
+│   ├── data/                      # Dataset files
+│   └── requirements.txt           # Python dependencies
+├── images/                        # Research diagrams and screenshots
+│   ├── Research Diagram.jpg
+│   ├── DengueStackX-19 Architecture.jpg
+│   ├── Negative prediction result with monitoring advice.png
+│   └── Positive prediction result with clinical guidance.png
+├── 📄 readme.md                   # Project documentation
 ```
 
 ### Technology Stack
@@ -368,7 +377,7 @@ response = requests.post("http://localhost:8000/predict-batch", json=batch_data)
 ### Interface Features
 
 - **Real-time Predictions**: Instant results upon form submission
-- **Risk Stratification**: Color-coded probability levels (Low/Moderate/High)
+- **Risk Stratification**: Color-coded probability levels (Low/High)
 - **Clinical Guidance**: Automated recommendations based on prediction
 - **Interactive Visualizations**: Dynamic model performance comparisons
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
@@ -393,7 +402,7 @@ response = requests.post("http://localhost:8000/predict-batch", json=batch_data)
 4. **Model Evaluation**
    - Multiple metrics: Accuracy, Precision, Recall, F1-score
    - ROC-AUC analysis
-   - Confusion matrix evaluation
+   - LIME-SHAP analysis
 
 5. **Model Deployment**
    - Model serialization with joblib
@@ -463,15 +472,15 @@ We welcome contributions from researchers, developers, and healthcare profession
 
 If you use this work in your research, please cite:
 
-```bibtex
-@article{denguestackx19_2024,
-  title={DengueStackX-19: An Explainable Machine Learning Framework for Dengue Diagnosis Using Clinical Hematological Data},
-  author={Mia, Md Rajib and Tuhin, Izaz Ahmmed and Siam, A K M Fazlul Kobir and Shanto, Md Mahfuzur Rahman},
+<!-- ```bibtex
+@article{denguestackx19_2025,
+  title={DengueStackX-19: An Interpretable Machine Learning Model for Dengue Detection with Clinical Hematological Data},
+  author={A K M Fazlul Kobir Siam, Md Rajib Mia, Izaz Ahmmed Tuhinand Siam,  and Shanto, Md Mahfuzur Rahman Shanto},
   journal={[Journal Name]},
-  year={2024},
+  year={2025},
   publisher={[Publisher]}
 }
-```
+``` -->
 
 ## 👥 Authors
 
