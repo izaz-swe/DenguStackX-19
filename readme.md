@@ -1,4 +1,4 @@
-# DengueStackX-19: An Explainable Machine Learning Framework for Dengue Diagnosis
+# An Interpretable Machine Learning Model for Dengue Detection with Clinical Hematological Data
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -58,19 +58,26 @@ The primary goal is to develop an accurate, interpretable, and accessible machin
 ## ✨ Features
 
 ### 🔍 Machine Learning Models
-- **Random Forest**: Ensemble learning with feature importance analysis
-- **Neural Networks**: Deep learning approach with multiple hidden layers
-- **Support Vector Machine (SVM)**: Kernel-based classification
-- **Logistic Regression**: Statistical baseline model
-- **Gradient Boosting**: LightGBM implementation
-- **Decision Trees**: Interpretable rule-based classification
+- **Random Forest**: Ensemble learning with feature importance analysis  
+
+- **Decision Tree**: Interpretable rule-based classification  
+
+- **Support Vector Machine (SVM)**: Kernel-based classification  
+
+- **K-Nearest Neighbors (KNN)**: Instance-based learning method  
+
+- **Light Gradient Boosting Machine (LightGBM)**: Efficient gradient boosting implementation  
+
+- **Logistic Regression**: Statistical baseline model  
+
+- **DengueStackX-19 Model**: Proposed stacked ensemble framework for dengue prediction  
 
 ### ⚖️ Data Balancing Techniques
 - **SMOTE** (Synthetic Minority Oversampling Technique)
 - **ADASYN** (Adaptive Synthetic Sampling)
 - **SMOTEENN** (SMOTE + Edited Nearest Neighbours)
 - **SMOTETomek** (SMOTE + Tomek Links)
-- **Tomek Links** removal
+- **Tomek Links** Data cleaning technique that removes borderline examples
 - **Without Balancing** (baseline comparison)
 
 ### 🌐 Web Platform Features
@@ -85,9 +92,9 @@ The primary goal is to develop an accurate, interpretable, and accessible machin
 The study utilizes a comprehensive dataset of clinical hematological parameters:
 
 - **Total Records**: 1,523 patient samples
-- **Features**: 18 clinical parameters
+- **Features**: 19 clinical parameters
 - **Target Variable**: Dengue status (Positive/Negative)
-- **Data Source**: Clinical laboratory results
+- **Data Source**: Jamalpur 250-Bedded Hospital, Jamalpur, Bangladesh.
 
 ### Clinical Parameters Analyzed
 
@@ -115,7 +122,7 @@ The study utilizes a comprehensive dataset of clinical hematological parameters:
 - 🎯 **Highest Accuracy**: 96.38% (SMOTEENN)
 - 📈 **Best F1-Score**: 94.20% (SMOTEENN)
 - ⚡ **Fastest Inference**: <100ms prediction time
-- 🔄 **Cross-validation**: 5-fold CV with consistent results
+- 🔄 **Cross-validation**: 10-fold CV with consistent results
 
 ## 🏗️ System Architecture
 
