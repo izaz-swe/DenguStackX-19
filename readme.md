@@ -11,7 +11,7 @@
 
 - [Overview](#-overview)
 - [Methodology](#-methodology)
-- [Model Architecture](#-model-architecture)
+- [Model Architecture](#️-model-architecture)
 - [Features](#-features)
 - [Dataset Information](#-dataset-information)
 - [Model Performance](#-model-performance)
