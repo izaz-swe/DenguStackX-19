@@ -352,18 +352,17 @@ response = requests.post("http://localhost:8000/predict-batch", json=batch_data)
 
 ### Screenshots
 
-<!-- Add screenshot placeholders -->
-**Figure 1**: Main dashboard showing prediction interface
-*[Screenshot to be added]*
+<!-- **Figure 1**: Main dashboard showing prediction interface
+![Main dashboard showing prediction interface](images/Main%20dashboard%20showing%20prediction%20interface.png)
 
 **Figure 2**: Model performance comparison visualization
-*[Screenshot to be added]*
+![Model performance comparison visualization](images/Model%20performance%20comparison%20visualization.png) -->
 
-**Figure 3**: Positive prediction result with clinical guidance
-*[Screenshot to be added]*
+**Figure 1**: Negative prediction result with monitoring advice
+![Negative prediction result with monitoring advice](images/Negative%20prediction%20result%20with%20monitoring%20advice.png)
 
-**Figure 4**: Negative prediction result with monitoring advice
-*[Screenshot to be added]*
+**Figure 2**: Positive prediction result with clinical guidance
+![Positive prediction result with clinical guidance](images/Positive%20prediction%20result%20with%20clinical%20guidance.png)
 
 ### Interface Features
 
