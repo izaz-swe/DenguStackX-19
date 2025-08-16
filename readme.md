@@ -45,11 +45,11 @@ The DengueStackX-19 framework implements a comprehensive three-tier architecture
 
 ### Key Research Contributions
 
-- **Comprehensive Algorithm Comparison**: Evaluation of 8+ machine learning algorithms including traditional ML and deep learning approaches
-- **Data Balancing Analysis**: Implementation of 6 different balancing techniques (SMOTE, ADASYN, SMOTEENN, SMOTETomek, Tomek Links)
-- **Clinical Validation**: Analysis of 1,523 patient records with 18 hematological features
-- **Web-based Deployment**: Real-time prediction interface for healthcare professionals
-- **Explainable AI**: Model interpretability features for clinical decision support
+-**Comprehensive Algorithm Comparison**: Evaluation of 7 machine learning algorithms including traditional ML and deep learning approaches
+-**Data Balancing Analysis**: Implementation of 6 different balancing techniques (SMOTE, ADASYN, SMOTEENN, SMOTETomek, Tomek Links)
+-**Clinical Validation**: Analysis of 1,523 patient records with 19 hematological and demographic features
+-**Web-based Deployment**: Real-time prediction interface for healthcare professionals
+-**Explainable AI**: Model interpretability features for clinical decision support
 
 ### 🎯 Research Objective
 
@@ -477,10 +477,12 @@ If you use this work in your research, please cite:
 
 | Name | Designation | Institution | Email | ORCID |
 |------|-------------|-------------|-------|-------|
-| **Md Rajib Mia** | Lecturer (Senior Scale) | Dept. of Software Engineering<br>Daffodil International University | rajib.swe@diu.edu.bd | [0000-0003-4692-7517](https://orcid.org/0000-0003-4692-7517) |
 | **Izaz Ahmmed Tuhin** | Lecturer | Dept. of Software Engineering<br>Daffodil International University | izaz35-634@diu.edu.bd | [0009-0009-1807-3754](https://orcid.org/0009-0009-1807-3754) |
 | **A K M Fazlul Kobir Siam** | Student | Dept. of Computer Science and Engineering<br>Daffodil International University | fazlul15-3432@diu.edu.bd | [0000-0002-4991-6816](https://orcid.org/0000-0002-4991-6816) |
 | **Md Mahfuzur Rahman Shanto** | Student | Dept. of Software Engineering<br>Daffodil International University | shanto35-917@diu.edu.bd | [0009-0007-6678-0635](https://orcid.org/0009-0007-6678-0635) |
+| **Md Rajib Mia** | Lecturer (Senior Scale) | Dept. of Software Engineering<br>Daffodil International University | rajib.swe@diu.edu.bd | [0000-0003-4692-7517](https://orcid.org/0000-0003-4692-7517) |
+| **Dr. Imran Mahmud** | Professor | Dept. of Software Engineering<br>Daffodil International University | imranmahmud@daffodilvarsity.edu.bd | [0000-0003-2962-8515](https://orcid.org/0000-0003-2962-8515) |
+| **Apurba Ghosh** | Assistant Professor  | Dept. of Multimedia & Creative Technology (MCT)<br>Daffodil International University | apurba.mct@diu.edu.bd | [0009-0006-0340-1864](https://orcid.org/0009-0006-0340-1864) |
 
 
 ## 🙏 Acknowledgments
