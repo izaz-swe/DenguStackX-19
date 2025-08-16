@@ -22,7 +22,6 @@
 - [Web Interface](#️-web-interface)
 - [Model Development](#-model-development)
 - [Evaluation Metrics](#-evaluation-metrics)
-- [Contributing](#-contributing)
 - [Citation](#-citation)
 - [Authors](#-authors)
 - [License](#-license)
@@ -194,7 +193,7 @@ DengueStackX-19/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/mahfuzswe/DengueStackX-19.git
+git clone https://github.com/izaz-swe/DengueStackX-19.git
 cd DengueStackX-19
 ```
 
@@ -354,7 +353,7 @@ response = requests.post("http://localhost:8000/predict-batch", json=batch_data)
 ```json
 {
   "prediction": 0|1,  // 0: Negative, 1: Positive
-  "probability": 0.0-1.0  // Probability of positive case
+  "probability": 0.5-1.0  // Probability of positive case
 }
 ```
 
@@ -437,36 +436,7 @@ The models are evaluated using standard classification metrics:
 - **False Negative Rate**: Critical metric for dengue detection
 - **Prediction Confidence**: Probability scores for clinical decision support
 
-## 🤝 Contributing
 
-We welcome contributions from researchers, developers, and healthcare professionals!
-
-### How to Contribute
-
-1. **Fork the repository**
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. **Make your changes**
-4. **Add tests** (if applicable)
-5. **Commit your changes**
-   ```bash
-   git commit -m "Add your descriptive commit message"
-   ```
-6. **Push to your branch**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-7. **Create a Pull Request**
-
-### Areas for Contribution
-
-- 🔬 **Research**: New algorithms, feature engineering
-- 💻 **Development**: UI/UX improvements, performance optimization
-- 📊 **Data**: Additional datasets, validation studies
-- 📖 **Documentation**: Tutorials, examples, translations
-- 🧪 **Testing**: Unit tests, integration tests, clinical validation
 
 ## 📄 Citation
 
@@ -475,10 +445,10 @@ If you use this work in your research, please cite:
 <!-- ```bibtex
 @article{denguestackx19_2025,
   title={DengueStackX-19: An Interpretable Machine Learning Model for Dengue Detection with Clinical Hematological Data},
-  author={A K M Fazlul Kobir Siam, Md Rajib Mia, Izaz Ahmmed Tuhinand Siam,  and Shanto, Md Mahfuzur Rahman Shanto},
-  journal={[Journal Name]},
+  author={A K M Fazlul Kobir Siam, Izaz Ahmmed Tuhin and Siam, Md Mahfuzur Rahman Shanto Md Rajib Mia, Dr. Imran Mahmud, Apurba Ghosh},
+  journal={[Healthcare Analytics]},
   year={2025},
-  publisher={[Publisher]}
+  publisher={[Elsevier]}
 }
 ``` -->
 
