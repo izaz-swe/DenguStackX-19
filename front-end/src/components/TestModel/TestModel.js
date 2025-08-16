@@ -441,18 +441,16 @@ const TestModel = () => {
                   <div style={{ 
                     marginBottom: '1rem', 
                     padding: '1rem', 
-                    background: result.probability < 0.3 ? '#d1fae5' : result.probability < 0.7 ? '#fef3c7' : '#fecaca', 
+                    background: result.probability < 0.5 ? '#d1fae5' : '#fecaca', 
                     borderRadius: '8px', 
                     fontSize: '1rem',
                     fontWeight: '500',
-                    color: result.probability < 0.3 ? '#065f46' : result.probability < 0.7 ? '#92400e' : '#991b1b'
+                    color: result.probability < 0.5 ? '#065f46' : '#991b1b'
                   }}>
                     Our model indicates a <strong>
-                      {result.probability < 0.3 ? 'Low' : 
-                       result.probability < 0.7 ? 'Moderate' : 'High'}
+                      {result.probability < 0.5 ? 'Low' : 'High'}
                     </strong> probability. {
-                      result.probability < 0.3 ? 'Stay Alert & Monitor Symptoms.' :
-                      result.probability < 0.7 ? 'Consult a doctor for confirmation.' :
+                      result.probability < 0.5 ? 'Stay Alert & Monitor Symptoms.' :
                       'Consult a doctor immediately.'
                     }
                   </div>

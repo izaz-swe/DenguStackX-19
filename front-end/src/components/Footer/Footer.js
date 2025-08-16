@@ -74,15 +74,15 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Contact</h4>
             <p>
-              <FontAwesomeIcon icon={faEnvelope} /> research@dengueml.org
+              <FontAwesomeIcon icon={faEnvelope} /> izaz35-634@diu.edu.bd
             </p>
             <p>
-              <FontAwesomeIcon icon={faUniversity} /> University Research Center
+              <FontAwesomeIcon icon={faUniversity} /> Daffodil International University
             </p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Dengue Prediction Research. All rights reserved.</p>
+          <p>&copy; 2025 Dengue Prediction Research. All rights reserved.</p>
         </div>
       </div>
     </footer>

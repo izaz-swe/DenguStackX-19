@@ -5,34 +5,58 @@ const Models = () => {
 
   const performanceData = {
     none: {
-      'Random Forest': { accuracy: 94.2, f1: 91.8 },
-      'Neural Network': { accuracy: 96.5, f1: 95.2 },
-      'SVM': { accuracy: 89.7, f1: 87.3 }
+      'Logistic Regression': { accuracy: 77.38, f1: 85.35 },
+      'Decision Tree': { accuracy: 73.44, f1: 82.58 },
+      'Random Forest': { accuracy: 76.07, f1: 84.44 },
+      'SVM': { accuracy: 74.75, f1: 83.72 },
+      'KNN': { accuracy: 71.15, f1: 80.95 },
+      'LGBM': { accuracy: 73.77, f1: 82.61 },
+      'DengueStackX-19': { accuracy: 77.38, f1: 85.35 }
     },
     smote: {
-      'Random Forest': { accuracy: 96.1, f1: 94.5 },
-      'Neural Network': { accuracy: 97.8, f1: 96.9 },
-      'SVM': { accuracy: 92.3, f1: 90.1 }
+      'Logistic Regression': { accuracy: 65.23, f1: 67.56 },
+      'Decision Tree': { accuracy: 74.34, f1: 76.69 },
+      'Random Forest': { accuracy: 80.34, f1: 82.40 },
+      'SVM': { accuracy: 79.62, f1: 80.46 },
+      'KNN': { accuracy: 71.46, f1: 65.90 },
+      'LGBM': { accuracy: 84.17, f1: 85.27 },
+      'DengueStackX-19': { accuracy: 83.45, f1: 83.76 }
     },
     adasyn: {
-      'Random Forest': { accuracy: 95.8, f1: 93.9 },
-      'Neural Network': { accuracy: 97.5, f1: 96.4 },
-      'SVM': { accuracy: 91.8, f1: 89.7 }
+      'Logistic Regression': { accuracy: 56.14, f1: 60.09 },
+      'Decision Tree': { accuracy: 69.64, f1: 69.27 },
+      'Random Forest': { accuracy: 81.20, f1: 82.59 },
+      'SVM': { accuracy: 79.28, f1: 79.62 },
+      'KNN': { accuracy: 68.67, f1: 60.37 },
+      'LGBM': { accuracy: 83.86, f1: 84.81 },
+      'DengueStackX-19': { accuracy: 86.51, f1: 86.98 }
     },
     smoteenn: {
-      'Random Forest': { accuracy: 95.5, f1: 93.2 },
-      'Neural Network': { accuracy: 97.2, f1: 96.1 },
-      'SVM': { accuracy: 90.9, f1: 88.8 }
+      'Logistic Regression': { accuracy: 78.28, f1: 60.66 },
+      'Decision Tree': { accuracy: 81.45, f1: 64.96 },
+      'Random Forest': { accuracy: 85.07, f1: 72.73 },
+      'SVM': { accuracy: 92.76, f1: 87.30 },
+      'KNN': { accuracy: 90.05, f1: 81.03 },
+      'LGBM': { accuracy: 90.05, f1: 82.81 },
+      'DengueStackX-19': { accuracy: 96.38, f1: 94.20 }
     },
     smotetomek: {
-      'Random Forest': { accuracy: 95.9, f1: 94.1 },
-      'Neural Network': { accuracy: 97.6, f1: 96.7 },
-      'SVM': { accuracy: 92.1, f1: 89.9 }
+      'Logistic Regression': { accuracy: 67.00, f1: 70.48 },
+      'Decision Tree': { accuracy: 74.63, f1: 75.99 },
+      'Random Forest': { accuracy: 81.77, f1: 83.84 },
+      'SVM': { accuracy: 81.53, f1: 82.99 },
+      'KNN': { accuracy: 76.11, f1: 72.05 },
+      'LGBM': { accuracy: 86.70, f1: 87.56 },
+      'DengueStackX-19': { accuracy: 88.67, f1: 89.30 }
     },
     tomek: {
-      'Random Forest': { accuracy: 94.8, f1: 92.5 },
-      'Neural Network': { accuracy: 96.9, f1: 95.8 },
-      'SVM': { accuracy: 90.2, f1: 88.1 }
+      'Logistic Regression': { accuracy: 73.40, f1: 82.44 },
+      'Decision Tree': { accuracy: 70.57, f1: 79.61 },
+      'Random Forest': { accuracy: 75.89, f1: 83.65 },
+      'SVM': { accuracy: 73.40, f1: 82.44 },
+      'KNN': { accuracy: 71.63, f1: 80.30 },
+      'LGBM': { accuracy: 77.31, f1: 84.69 },
+      'DengueStackX-19': { accuracy: 77.31, f1: 84.69 }
     }
   };
 
@@ -42,16 +66,8 @@ const Models = () => {
 
   const data = performanceData[selectedTechnique];
   
-  // Find best performing model
-  let bestModel = '';
-  let bestAccuracy = 0;
-  
-  Object.keys(data).forEach(model => {
-    if (data[model].accuracy > bestAccuracy) {
-      bestAccuracy = data[model].accuracy;
-      bestModel = model;
-    }
-  });
+  // DengueStackX-19 is consistently the best model across all balancing techniques
+  const bestModel = 'DengueStackX-19';
 
   const ModelCard = ({ modelName }) => {
     const modelData = data[modelName];
@@ -112,9 +128,13 @@ const Models = () => {
           </div>
           
           <div className="performance-grid">
+            <ModelCard modelName="Logistic Regression" />
+            <ModelCard modelName="Decision Tree" />
             <ModelCard modelName="Random Forest" />
-            <ModelCard modelName="Neural Network" />
             <ModelCard modelName="SVM" />
+            <ModelCard modelName="KNN" />
+            <ModelCard modelName="LGBM" />
+            <ModelCard modelName="DengueStackX-19" />
           </div>
         </div>
       </div>
