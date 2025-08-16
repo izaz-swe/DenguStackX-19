@@ -446,7 +446,7 @@ If you use this work in your research, please cite:
 <!-- ```bibtex
 @article{denguestackx19_2025,
   title={DengueStackX-19: An Interpretable Machine Learning Model for Dengue Detection with Clinical Hematological Data},
-  author={A K M Fazlul Kobir Siam, Izaz Ahmmed Tuhin, Md Mahfuzur Rahman Shanto Md Rajib Mia, Dr. Imran Mahmud, Apurba Ghosh},
+  author={A K M Fazlul Kobir Siam, Izaz Ahmmed Tuhin, Md Mahfuzur Rahman Shanto, Md Rajib Mia, Dr. Imran Mahmud, Apurba Ghosh},
   journal={[Healthcare Analytics]},
   year={2025},
   publisher={[Elsevier]}
