@@ -6,20 +6,9 @@ import { faLinkedin, faTwitter, faGithub, faResearchgate } from '@fortawesome/fr
 const Team = () => {
   const teamMembers = [
     {
-      name: 'Dr. Research Lead',
-      role: 'Principal Investigator',
-      description: 'Specializes in machine learning applications in healthcare and infectious disease prediction.',
-      icon: faUserMd,
-      social: [
-        { icon: faLinkedin, href: '#' },
-        { icon: faTwitter, href: '#' },
-        { icon: faEnvelope, href: '#' }
-      ]
-    },
-    {
-      name: 'Data Scientist',
-      role: 'ML Engineer',
-      description: 'Expert in data balancing techniques and neural network architectures for medical diagnosis.',
+      name: 'A.K.M. Fazlul Kobir Siam',
+      role: 'B.Sc Student',
+      description: 'Computer Science and Engineering, Daffodil International University',
       icon: faUserGraduate,
       social: [
         { icon: faLinkedin, href: '#' },
@@ -28,9 +17,53 @@ const Team = () => {
       ]
     },
     {
-      name: 'Medical Advisor',
-      role: 'Clinical Consultant',
-      description: 'Provides clinical insights for feature selection and validation of prediction results.',
+      name: 'Izaz Ahmmed Tuhin',
+      role: 'B.Sc, Lecturer',
+      description: 'Software Engineering, Daffodil International University',
+      icon: faUserTie,
+      social: [
+        { icon: faLinkedin, href: '#' },
+        { icon: faGithub, href: '#' },
+        { icon: faEnvelope, href: '#' }
+      ]
+    },
+    {
+      name: 'Md Mahfuzur Rahman Shanto',
+      role: 'B.Sc Student',
+      description: 'Software Engineering, Daffodil International University',
+      icon: faUserGraduate,
+      social: [
+        { icon: faLinkedin, href: '#' },
+        { icon: faGithub, href: '#' },
+        { icon: faEnvelope, href: '#' }
+      ]
+    },
+    {
+      name: 'Md Rajib Mia',
+      role: 'MSc, Lecturer (Senior Scale)',
+      description: 'Software Engineering, Daffodil International University',
+      icon: faUserTie,
+      social: [
+        { icon: faLinkedin, href: '#' },
+        { icon: faResearchgate, href: '#' },
+        { icon: faEnvelope, href: '#' }
+      ]
+    },
+    {
+      name: 'Dr. Imran Mahmud',
+      role: 'PhD, Professor',
+      description: 'Software Engineering, Daffodil International University',
+      icon: faUserMd,
+      social: [
+        { icon: faLinkedin, href: '#' },
+        { icon: faResearchgate, href: '#' },
+        { icon: faEnvelope, href: '#' }
+      ]
+    },
+    {
+      name: 'Apurba Ghosh',
+      role: 'MSc, Assistant Professor',
+      description: 'Multimedia & Creative Technology, Daffodil International University',
       icon: faUserTie,
       social: [
         { icon: faLinkedin, href: '#' },
@@ -44,7 +77,7 @@ const Team = () => {
     <section id="team" className="team">
       <div className="container">
         <div className="section-header">
-          <h2>Research Team</h2>
+          <h2>Authors</h2>
           <p>Meet the researchers behind this innovative dengue prediction study</p>
         </div>
         
